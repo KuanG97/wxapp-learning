@@ -1,0 +1,39 @@
+.container{
+  padding:30rpx 15rpx;
+}
+.btn{
+  color: #fff !important;
+  margin-bottom:30rpx;
+}
+.btnBlue1{
+  background: #73C1FF !important;
+  color: #fff;
+}
+.btnBlue2{
+  background: #59B7FF !important;
+}
+.btnBlue3{
+  background: #43AEFF !important;
+}
+.btnBlue4{
+  background: #2FA7FF !important;
+}
+.btnBlue5{
+  background: #008EF7 !important;
+}
+.btnBlue6{
+  background: #1A92EA !important;
+}
+.btnBlue7{
+  background: #1D86D7 !important;
+}
+.button-hover {
+  background-color: red;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blue;
+}
+.textCenter{
+  text-align: center;
+}

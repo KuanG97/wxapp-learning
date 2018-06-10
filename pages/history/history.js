@@ -1,0 +1,21 @@
+Page({
+  data:{
+    expr:"本地缓存",
+    exprs:[]
+  },
+  onLoad:function(options){
+    this.setData({
+      exprs:wx.getStorageSync("exprs")||[]
+    });
+  },
+  clearExpr:function(e){
+    try{
+      wx.clearStorageSync()
+    }catch(e){
+      console.log(e);
+    }
+    this.setData({
+      exprs:[]
+    });
+  }
+})

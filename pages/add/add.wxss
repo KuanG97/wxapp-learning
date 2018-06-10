@@ -1,0 +1,66 @@
+.content{
+  width: 100%;
+  border-top:1px solid #ddd; 
+  position: fixed;
+  bottom: 0px;
+  margin:0 auto;
+  padding-top:10rpx;
+  padding-bottom:15rpx;
+}
+.screen{
+  width: 680rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 5rpx 15rpx;
+  margin:5rpx auto;
+  background: #efffff;
+  color: #757575;
+  text-align: right;
+  border:1px dashed #ddd;
+  border-radius: 5rpx;
+}
+.btnGroup{
+  display: flex;
+  flex-direction: row;/*行布局*/
+  padding: 0 15rpx 0 16rpx;
+}
+.item{
+  width: 172rpx;
+  min-height: 100rpx;
+  margin:5rpx;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.35);
+  text-align: center;
+  line-height: 100rpx; 
+  border-radius: 5rpx;
+  border: 1px solid #0076a3;
+}
+.deepBule{
+  background: #3366ff;
+  color: #fff;
+  border: 1px solid #0076a3;
+}
+.blue{
+  background: #3399ff;
+  color: #fff;
+  border: 1px solid #0076a3;
+}
+.other-button{
+  opacity: 0.7;
+}
+.num-button{
+  opacity: 0.7;
+}
+.text-left{
+  width: 70px;
+  text-align:left;
+}
+.text-right{
+  width: 70px;
+  text-align:left;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}

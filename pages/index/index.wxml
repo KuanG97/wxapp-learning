@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <button type="default" bindtap="btnIndex" class='btn btnBlue1' id='{{btn1}}'>常规计算器</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue2' id='{{btn2}}'>计算器本地历史</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue3' id='{{btn3}}'>特别的计算器</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue4' id='{{btn4}}'>天气</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue5' id='{{btn5}}'>表单</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue6' id='{{btn6}}'>媒体</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue7' id='{{btn7}}'>加法减法计算器</button>
+  <button type="default" bindtap="btnIndex" class='btn btnBlue7' id='{{btn8}}'>图表</button>
+</view>

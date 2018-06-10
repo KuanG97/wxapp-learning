@@ -1,0 +1,57 @@
+.content{
+height:100%;
+display: flex;
+flex-direction: column;/* 列布局 */
+align-items: center;
+box-sizing:border-box;
+padding-top:10rpx;
+}
+.screen{
+  width: 650rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 10rpx 20rpx;
+  margin:30rpx;
+  background: #efffff;
+  color: #757575;
+  text-align: right;
+  border:1px dashed #ddd;
+  border-radius: 5rpx;
+}
+.btnGroup{
+  display: flex;
+  flex-direction: row;/*行布局*/
+}
+.btnGroup2{
+  display: flex;
+  flex-direction: row;/*行布局*/
+  height: 90rpx;
+}
+.item{
+  width: 160rpx;
+  min-height: 150rpx;
+  margin:10rpx;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.35);
+  text-align: center;
+  line-height: 150rpx; 
+  border-radius: 5rpx;
+}
+.deepBule{
+  background: #3366ff;
+  color: #fff;
+  border: 1px solid #0076a3;
+}
+.blue{
+  background: #3399ff;
+  color: #fff;
+  border: 1px solid #0076a3;
+}
+.other-button{
+  opacity: 0.7;
+}
+.num-button{
+  opacity: 0.7;
+}
+.historyText{
+  line-height: 32px;
+}

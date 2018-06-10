@@ -1,0 +1,36 @@
+<button type="default" bindtap="btnDisplay" class='btn btnBlue7'>出现计算器</button>
+
+<view class="content {{showView?'show':'hide'}}">
+  <view class="section">
+    <input placeholder="备注..." auto-focus/>
+  </view>
+  <view class='screen'>{{result}}</view>
+
+  <view class='btnGroup'>
+    <button class='item deepBule' hover-class='other-button' id='{{b1}}' bindtap='clickBtn'>7</button>
+    <button class='item deepBule' hover-class='other-button' id='{{b2}}' bindtap='clickBtn'>8</button>
+    <button class='item deepBule' hover-class='other-button' id='{{b3}}' bindtap='clickBtn'>9</button>
+    <button class='item deepBule' hover-class='other-button' id='{{b4}}' bindtap='clickBtn'>时间</button>
+  </view>
+
+  <view class='btnGroup'>
+    <button class='item blue' hover-class='num-button' id='{{b5}}' bindtap='clickBtn'>4</button>
+    <button class='item blue' hover-class='num-button' id='{{b6}}' bindtap='clickBtn'>5</button>
+    <button class='item blue' hover-class='num-button' id='{{b7}}' bindtap='clickBtn'>6</button>
+    <button class='item deepBule' hover-class='other-button' id='{{b8}}' bindtap='clickBtn'>+</button>
+  </view>
+
+  <view class='btnGroup'>
+    <button class='item blue' hover-class='num-button' id='{{b9}}' bindtap='clickBtn'>1</button>
+    <button class='item blue' hover-class='num-button' id='{{b10}}' bindtap='clickBtn'>2</button>
+    <button class='item blue' hover-class='num-button' id='{{b11}}' bindtap='clickBtn'>3</button>
+    <button class='item deepBule' hover-class='other-button' id='{{b12}}' bindtap='clickBtn'>-</button>
+  </view>
+
+  <view class='btnGroup'>
+    <button class='item blue' hover-class='num-button' id='{{b13}}' bindtap='clickBtn'>.</button>
+    <button class='item blue' hover-class='num-button' id='{{b14}}' bindtap='clickBtn'>0</button>
+    <button class='item blue' hover-class='num-button' id='{{b15}}' bindtap='clickBtn'>←</button>
+    <button class='item deepBule' hover-class='other-button' id='{{b16}}' bindtap='clickBtn'>=</button>
+  </view>
+</view>

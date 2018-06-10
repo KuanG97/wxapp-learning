@@ -1,0 +1,31 @@
+<view class="content">
+  <!-- input输入数据 -->
+  <!-- <input placeholder='被加数' bindinput='bindInput1'></input>
+  <input placeholder='加数' bindinput='bindInput2'></input> -->
+  <view class='sectipn__title'>被加数</view>
+  <slider min="0" max='1000' bindchange='bindInput1' show-value></slider>
+  <view class='sectipn__title'>加数</view>
+  <slider min="0" max='1000' bindchange='bindInput2' show-value></slider>
+  <button type='info' bindtap='bindAdd'>计算</button>
+  <input placeholder='结果' value='{{result}}' disabled></input>
+</view>
+
+
+
+  <!-- <view class="section">
+    <view class="textCenter">View-Flex</view>
+    <view class="section__title">flex-direction: row</view>
+    <view class="flex-wrp" style="flex-direction:row;">
+      <view class="flex-item bc_green">1</view>
+      <view class="flex-item bc_red">2</view>
+      <view class="flex-item bc_blue">3</view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section__title">flex-direction: column</view>
+    <view class="flex-wrp" style="height: 300px;flex-direction:column;">
+      <view class="flex-item bc_green">1</view>
+      <view class="flex-item bc_red">2</view>
+      <view class="flex-item bc_blue">3</view>
+    </view>
+  </view> -->

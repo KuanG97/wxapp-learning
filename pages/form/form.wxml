@@ -1,0 +1,71 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='container'>
+  <form bindsubmit='formSubmit' bindreset='formReset'>
+    <view class='section'>
+      <view class='labelBlue'>姓名</view>
+      <input placeholder='请输入姓名' name="name"></input>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>性别</view>
+      <radio-group name="sex">
+        <label><radio value='male' checked></radio>男</label>
+        <label><radio value='female'></radio>女</label>
+      </radio-group>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>多选</view>
+      <checkbox-group name="place">
+        <label wx:for='{{place}}'>
+          <checkbox value='{{item.name}}' checked='{{item.check}}'>{{item.value}}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>Place Picker</view>
+      <picker bindchange='bindPicker' name="getPlace" value='{{index}}' range='{{places}}'>
+        <view class='picker'>当前选择：{{places[index]}}</view>
+      </picker>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>Date Picker</view>
+      <picker mode="date" name="getDate" bindchange='bindDatePicker' value='{{Date}}' start="{{startDate}}" end="{{endDate}}">
+        <view class='picker'>当前选择：{{Date}}</view>
+      </picker>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>Time Picker</view>
+      <picker mode="time" name="getTime" bindchange='bindTimePicker' value='{{Time}}' start="{{startTime}}" end="{{endTime}}">
+        <view class='picker'>当前选择：{{Time}}</view>
+      </picker>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>Switch</view>
+        <switch name="switch" checked='{{flag}}'/>
+    </view>
+
+    <view class='section'>
+      <view class='labelBlue'>Slider</view>
+        <slider name="slider"  min="50" max="200" step='50'  show-value></slider>
+    </view>
+
+    <view class='btnArea'>
+      <button form-type='submit' type='primary'>提交</button>
+      <button form-type='reset' type='default'>重置</button>
+    </view>
+
+  </form>
+</view>

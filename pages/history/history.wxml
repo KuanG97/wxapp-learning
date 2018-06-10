@@ -1,0 +1,7 @@
+<view class="container">
+  <view class='title'>{{expr}}</view>
+  <view wx:for="{{exprs}}">
+    <view>{{item}}</view>
+  </view>
+  <button class="item blue" bindtap='clearExpr'>清除本地缓存</button>
+</view>

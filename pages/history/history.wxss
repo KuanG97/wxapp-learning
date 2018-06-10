@@ -1,0 +1,30 @@
+.container{
+  text-align: center;
+}
+.item{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 120rpx;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.35);
+  text-align: center;
+  line-height: 120rpx; 
+}
+.deepBule{
+  background: #3366ff;
+  color: #fff;
+  border: 1px solid #0076a3;
+}
+.blue{
+  background: #3399ff;
+  color: #fff;
+  border: 1px solid #0076a3;
+}
+.title{
+  width: 30%;
+  margin: 20rpx 35%;
+  font-size: 34rpx;
+  color: #d1d1d1;
+  border-bottom: 2px solid #efefef;
+  background: #efffff;
+}

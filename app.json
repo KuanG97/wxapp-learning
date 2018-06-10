@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/report/report",
+    "pages/reportIn/reportIn",
+    "pages/add/add",
+    
+    "pages/media/media",
+    "pages/form/form",
+    "pages/weather/weather",
+    "pages/calc/calc",
+    "pages/history/history",
+    "pages/counter/counter",
+    "pages/logs/logs",
+    "pages/template/reportList/reportList"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+}

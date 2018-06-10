@@ -1,0 +1,77 @@
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding:10rpx;
+}
+.info{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 160px;
+}
+.city{
+  margin: 20rpx;
+  border-bottom: 1px solid #043567;
+}
+.temp{
+  font-size: 120rpx;
+  line-height: 130rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.weather{
+  font-size: 34rpx;
+  line-height: 44rpx;
+  margin: 10rpx 0;
+  padding:0 10rpx;
+}
+.yesterday{
+  width: 93%;
+  padding: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  border:1px solid #043567;
+}
+.yesterday-title{
+  color: #3399ff;
+}
+.forecast{
+  width: 100%;
+  display: flex;
+  margin-top: 50rpx;
+  align-self: flex-end;
+}
+.next-day{
+  width: 20%;
+  height: 450rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 27rpx;
+  margin: 0 3rpx;
+  border: 1px solid #043567;
+  border-radius: 10rpx;
+}
+.date{
+  margin-bottom: 20rpx;
+  border-bottom: 1px solid #043567;
+}
+.search-area{
+  width: 100%;
+  display: flex;
+  padding: 2rem 0;
+}
+.search-area input{
+  width: 70%;
+  height: 68rpx;
+  line-height: 68rpx;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 10px #ccc;
+  border-radius: 10rpx;
+}
+.search-area button{
+  width: 30%;
+  height: 68rpx;
+  margin-left: 5px;
+}

@@ -1,0 +1,18 @@
+.slide-image{
+  width: 100%;
+}
+.container{
+  padding:40rpx 30rpx 20rpx;
+}
+.section{
+  padding-bottom: 25rpx;
+}
+.labelBlue{
+  color: #3399ff;
+}
+.btnArea{
+  padding: 25rpx 0;
+}
+.btnArea button{
+  margin-bottom: 15rpx;
+}
