@@ -1,0 +1,19 @@
+image{
+  position: absolute;
+  top: 25rpx;
+  left:60rpx;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 1;
+}
+.absoluteTitle{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 50rpx;
+}
+.z{
+  z-index: 200000;
+}

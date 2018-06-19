@@ -116,7 +116,7 @@ Page({
         /*缓存所需操作end*/
       } else if (e.target.id == "history"){
         wx.navigateTo({
-          url: '../history/history',
+          url: '../../history/history',
         })
       }
       

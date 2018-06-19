@@ -1,9 +1,30 @@
 .container{
   padding:30rpx 15rpx;
 }
+.titleIndex{
+  color: #757575;
+  font-size: 42rpx;
+  margin-top: 50rpx; 
+  margin-bottom: 25rpx; 
+}
+.flexRow{
+  display: flex;
+  flex-direction: row;
+}
+.flexCol{
+  display: flex;
+  flex-direction: column;
+}
 .btn{
   color: #fff !important;
-  margin-bottom:30rpx;
+}
+.indexBtn{
+  position: relative;
+  color: #fff !important;
+}
+.sizeIndex{
+    width: 180rpx;
+    height: 140rpx;
 }
 .btnBlue1{
   background: #73C1FF !important;
@@ -36,4 +57,7 @@
 }
 .textCenter{
   text-align: center;
+}
+.marBot30{
+  margin-top: 30rpx;
 }

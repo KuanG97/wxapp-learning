@@ -1,11 +1,57 @@
 <!--index.wxml-->
 <view class="container">
-  <button type="default" bindtap="btnIndex" class='btn btnBlue1' id='{{btn1}}'>常规计算器</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue2' id='{{btn2}}'>计算器本地历史</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue3' id='{{btn3}}'>特别的计算器</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue4' id='{{btn4}}'>天气</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue5' id='{{btn5}}'>表单</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue6' id='{{btn6}}'>媒体</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue7' id='{{btn7}}'>加法减法计算器</button>
-  <button type="default" bindtap="btnIndex" class='btn btnBlue7' id='{{btn8}}'>图表</button>
+  <view class='flexCol titleIndex'>计算器</view>
+  <view class='flexRow'>
+    <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue1' id='{{btnMsg[0].btn}}'>
+        <image src='{{btnMsg[0].img}}'></image><view class='absoluteTitle'>常规计算器</view>
+    </view>
+    <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue2' id='{{btnMsg[1].btn}}'>
+        <image src='{{btnMsg[1].img}}'></image><view class='absoluteTitle'>计算器本地历史</view>
+    </view>
+    <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue3' id='{{btnMsg[2].btn}}'>
+        <image src='{{btnMsg[2].img}}'></image><view class='absoluteTitle'>特别的计算器</view>
+    </view>
+    <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue4' id='{{btnMsg[6].btn}}'>
+        <image src='{{btnMsg[6].img}}'></image><view class='absoluteTitle'>隐藏加减计算器</view>
+    </view>
+  </view>
+  <view class='flexRow'>
+    <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue1' id='{{btnMsg[8].btn}}'>
+        <image src='{{btnMsg[8].img}}'></image><view class='absoluteTitle'>房贷计算器</view>
+    </view>
+    <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue2' id='{{btnMsg[9].btn}}'>
+        <image src='{{btnMsg[9].img}}'></image><view class='absoluteTitle'>工资计算器</view>
+    </view>
+  </view>
+
+
+  <view class='flexCol titleIndex'>随意弄的练习</view>
+    <view class='flexRow'>
+      <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue1' id='{{btnMsg[7].btn}}'>
+        <view class='flexCol'>
+          <image src='{{btnMsg[7].img}}'></image><view class='absoluteTitle'>图表</view>
+        </view>
+      </view>
+      <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue2' id='{{btnMsg[3].btn}}'>
+        <view class='flexCol'>
+          <image src='{{btnMsg[3].img}}'></image><view class='absoluteTitle'>天气</view>
+        </view>      
+      </view>
+    </view>
+
+  <view class='flexCol titleIndex'>跟着文档的组件学习</view>
+    <view class='flexRow'>
+      <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue1' id='{{btnMsg[4].btn}}'>
+        <view class='flexCol'>
+          <image src='{{btnMsg[4].img}}'></image><view class='absoluteTitle'>表单</view>
+        </view>
+      </view>
+      <view type="default" bindtap="btnIndex" class='indexBtn sizeIndex btnBlue2' id='{{btnMsg[5].btn}}'>
+        <view class='flexCol'>
+          <image src='{{btnMsg[5].img}}'></image><view class='absoluteTitle'>媒体</view>
+        </view>
+      </view>
+    </view>
+
+
 </view>
