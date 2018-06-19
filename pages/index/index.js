@@ -41,7 +41,7 @@ Page({
       })
     } else if (tmp == "chart") {
       wx.navigateTo({
-        url: '../report/report',
+        url: '../report/report/report',
       })
     }
   }
