@@ -30,7 +30,10 @@ Page({
     console.log("当前时间：" + Y + M + D + h + ":" + m + ":" + s);
     var time = Y + M + D + h + ":" + m + ":" + s
     this.setData({
-      time: time
+      time: time,
+      logs: (wx.getStorageSync('logs') || []).map(log => {
+        return util.formatTime(new Date(log))
+      })
     })
   }
 })
