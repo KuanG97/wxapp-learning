@@ -1,3 +1,0 @@
-/**app.wxss**/
-@import "../template/reportList/reportList.wxss";
-@import "../report/report.wxss";

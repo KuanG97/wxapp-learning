@@ -1,5 +1,4 @@
 var wxCharts = require('wxcharts-min.js');
-var util = require('../../utils/util.js');
 var app = getApp();
 var lineChart = null;
 var lineChart1 = null;
@@ -7,9 +6,6 @@ var lineChart2 = null;
 
 Page({
   data: {
-    setMonth:"",
-    setYear: "",
-    setWeek: "",
     //Tab标签栏
     id3:"week",
     id4:"month",
@@ -23,100 +19,134 @@ Page({
     week:true,
     month:false,
     year: false,
-    // 页面配置
-    winWidth: 0,
-    winHeight: 0,
-    // tab切换  
     currentTab: 0,  
+    // picker 时间数据
+    weekPicker: [],//getweekPicker func（）初始化
+    weekIndex: 0,
+    monthPicker: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    monthIndex: 0,
+    yearPicker: [],
+    yearIndex: 0,
+    getDate: [],//arr["年","月","日","今年的第几天","今年的第几周"]
+    setMonth: "",
+    setYear: "",
+    setWeek: "",
     //列表
     reportListZ: [
       {
-        img: "../../img/1.jpg",
+        img: "/img/1.jpg",//title对应的icon图片
         title: "食物",
-        msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
+        msg: "人生没有如果，只有后果和结果，",//备注
+        time: "2022-10-9",
         price: "50",
       },
       {
-        img: "../../img/1.jpg",
+        img: "/img/1.jpg",
         title: "食物",
         msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
+        time: "2022-10-9",
         price: "5000",
       }
     ],
     reportListM: [
       {
-        img: "../../img/1.jpg",
+        img: "/img/1.jpg",
         title: "娱乐",
         msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
+        time: "2022-10-9",
         price: "50",
       },
       {
-        img: "../../img/1.jpg",
+        img: "/img/1.jpg",
         title: "服饰",
         msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
-        price: "500000",
-      },
-      {
-        img: "../../img/1.jpg",
-        title: "服饰",
-        msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
+        time: "2022-10-9",
         price: "500000",
       }
     ],
     reportListM: [
       {
-        img: "../../img/1.jpg",
+        img: "/img/1.jpg",
         title: "娱乐",
         msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
+        time: "2022-10-9",
         price: "50",
-      },
-      {
-        img: "../../img/1.jpg",
-        title: "服饰",
-        msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
-        price: "500000",
-      },
-      {
-        img: "../../img/1.jpg",
-        title: "服饰",
-        msg: "人生没有如果，只有后果和结果，",
-        time: "2022年 10月 9日 ",
-        price: "500000",
       }
     ],
   reportListY: [
     {
-      img: "../../img/1.jpg",
+      img: "/img/1.jpg",
       year: "2018",
       month:"1",
-      msg: "人生没有如果，只有后果和结果，",
+      spanding: "500000000",
+      income: "50",
+    }, {
+      img: "/img/1.jpg",
+      year: "2018",
+      month: "1",
       spanding: "500000000",
       income: "50",
     },
   ],
-    // 图表参数
-    weekTagName:"当天支出",
-    monthTagName: "该月支出",
-    yearTagName: "该月支出",
-    monthSum:[],
-    weekData:[500,130,447.2,271,211.3,500,170],
-    monthData: [5, 44.2, 5, 17],
-    yearData: [5000,11000,24000,110,13000, 4400.2, 2100,1500,910, 110.99, 750, 1700],
-    weekXData: ["一", "二", "三", "四", "五", "六", "日"],
-    monthXData: ["第1周", "第2周", "第3周", "第4周", "第5周", "第6周"],
-    yearXData: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+  listYIndex:null,
+  // 图表展示固定参数
+  weekTagName:"当天支出",
+  monthTagName: "该月支出",
+  yearTagName: "该月支出",
+  monthSum: [],
+      // 图表展示固定参数之X轴
+  weekXData: ["一", "二", "三", "四", "五", "六", "日"],
+  monthXData: ["第1周", "第2周", "第3周", "第4周", "第5周", "第6周"],
+  yearXData: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+  //图表展示参数之对应价格
+  weekData:[500,130,447.2,271,211.3,500,170],
+  monthData: [5, 44.2, 5, 17],
+  yearData: [5000,11000,24000,110,13000, 4400.2, 2100,1500,910, 110.99, 750, 1700],
+  },
+
+  /*
+   *绑定修改
+   */
+  bindModifyAccount:function(e){
+    var id = e.currentTarget.id;
+    console.log("选中的列表项：" + id );
+    wx.navigateTo({
+      url: '../modify/modify?index=' + id + '&list=' + JSON.stringify(this.data.reportListZ) ,
+    })
+  },
+  bindModifyAccountM:function(e){
+    var id = e.currentTarget.id;
+    console.log("选中的列表项：" + id );
+    wx.navigateTo({
+      url: '../modify/modify?index=' + id + '&list=' + JSON.stringify(this.data.reportListM) ,
+    })
+  },
+
+  /*
+   *绑定点击picker数值
+   */
+  bindWeekPickerChange: function (e) {
+    console.log('week picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      weekIndex: e.detail.value
+    })
+  },
+  bindMonthPickerChange: function (e) {
+    console.log('week picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      monthIndex: e.detail.value
+    })
+  },
+  bindYearPickerChange: function (e) {
+    console.log('week picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      yearIndex: e.detail.value
+    })
   },
 
 
  /*
-  * 点击图表获取对应信息
+  * 点击图表获取对应点信息
   */
   touchHandler: function (e) {
     console.log(lineChart.getCurrentDataIndex(e));
@@ -145,7 +175,7 @@ Page({
 
 
  /*
-  * 图表X轴
+  * 图表X轴初始化
   */
   createSimulationData: function () {
     var categories = [];
@@ -201,9 +231,9 @@ Page({
   onLoad: function (e) {
     var windowWidth;
     var that = this;
-    /* 
-     * 获取系统信息 
-     */
+    var Date = getDate();
+    console.log(Date);
+    //获取系统信息 
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -317,11 +347,14 @@ Page({
       }
     });
     this.setData({
-      setMonth: getMonth(),
-      setYear: getYear(),
-      setWeek: getWeek()
+      monthIndex: Date[1]-1,
+      weekIndex: Date[4] - 1,
+      setYear: Date[0],
+      weekPicker: getweekPicker(),
+      getDate: Date[2],
     })
   },
+
 
   /*
   *点击tab切换
@@ -356,36 +389,40 @@ Page({
   }
 });
 
-// 运算时间
-var getMonth = function () {
-  var timestamp = Date.parse(new Date());
-  timestamp = timestamp / 1000;
-  var n_to = timestamp * 1000;//当天
-  var date = new Date(n_to); 
-  console.log("当前时间戳为：" + date);
-  //月份  
-  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);  
-  console.log("月：" + M);
-  return M;
+var getweekPicker = function(){
+  var weekPickerIndex = 53;
+  var weekPicker = [];
+  for(var i=0;i<35;i++){
+    weekPicker[i]=i+1;
+  }
+  console.log("周picker:"+weekPicker);
+  return weekPicker;
 }
-var getYear = function () {
-  var timestamp = Date.parse(new Date());
-  timestamp = timestamp / 1000;
-  var n_to = timestamp * 1000;//当天
-  var date = new Date(n_to);
-  console.log("当前时间戳为：" + date);
-  //年份  
-  var Y = date.getFullYear();
-  console.log("年：" + Y);
-  return Y;
-}
-var getWeek = function () {
-  var timestamp = Date.parse(new Date());
-  timestamp = timestamp / 1000;
-  var n_to = timestamp * 1000;//当天
-  var date = new Date(n_to);
-  console.log("当前时间戳为：" + date);
-  var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-  console.log("周：" + D);
-  return D;
+
+// 获取时间
+var getDate = function(){
+  var getDate=[];
+  var dateArr = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth(); //getMonth()是从0开始  
+  var year = date.getFullYear();
+  var result = 0;
+  var weekResult;
+  for (var i = 0; i < month; i++) {
+    result += dateArr[i];
+  }
+  result += day;
+  //判断是否闰年  
+  if (month > 1 && (year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+    result += 1;
+  }
+  weekResult = result / 7;
+  getDate[0] = year;
+  getDate[1] = month+1;
+  getDate[2] = day;
+  getDate[3] = result;
+  getDate[4] = parseInt(weekResult);
+  console.log("今天是" + getDate[0] + "年" + getDate[1] + "月" + getDate[2] + "日,是今年的第" + getDate[3] + "天第" + getDate[4] + "周"); 
+  return getDate;
 }
