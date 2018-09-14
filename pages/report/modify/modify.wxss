@@ -4,7 +4,7 @@ page{
 }
 .session{
   text-align: left;
-  width: 700rpx;
+  width: 670rpx;
   padding: 25rpx 25rpx 30rpx 25rpx;
   background: #fff;
 }

@@ -1,5 +1,5 @@
 .container{
-  padding:30rpx 15rpx;
+  padding:30rpx 20rpx;
 }
 .titleIndex{
   color: #757575;
