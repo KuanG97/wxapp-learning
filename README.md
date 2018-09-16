@@ -24,4 +24,3 @@ wx-app for practice by kxx
 [ESLint问题记录 Click Here>>](https://blog.csdn.net/m0_37136491/article/details/81980728)
 
 [github各类实战练习源码下载 Click Here>>](https://github.com/KuanG97)
-如果你觉得我的东西能帮到你，无限欢迎给我的github库点个收藏Star~0v 0~
