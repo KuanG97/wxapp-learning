@@ -1,77 +1,112 @@
-.container{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding:10rpx;
+.contain{
+  position:relative;
+  width: 750rpx;
+  padding:40rpx 0 240rpx;
 }
-.info{
-  margin-top: 30rpx;
-  width: 100%;
-  height: 160px;
-}
-.city{
-  margin: 20rpx;
-  border-bottom: 1px solid #043567;
-}
-.temp{
-  font-size: 120rpx;
-  line-height: 130rpx;
+.title {
   text-align: center;
-  padding-top: 20rpx;
+  font-size: 200rpx;
+  line-height: 200rpx;
+  opacity: 0.7;
 }
 .weather{
-  font-size: 34rpx;
-  line-height: 44rpx;
-  margin: 10rpx 0;
-  padding:0 10rpx;
-}
-.yesterday{
-  width: 93%;
-  padding: 20rpx;
-  margin-top: 50rpx;
-  border-radius: 10rpx;
-  border:1px solid #043567;
-}
-.yesterday-title{
-  color: #3399ff;
-}
-.forecast{
-  width: 100%;
-  display: flex;
-  margin-top: 50rpx;
-  align-self: flex-end;
-}
-.next-day{
-  width: 20%;
-  height: 450rpx;
   text-align: center;
-  line-height: 50rpx;
-  font-size: 27rpx;
-  margin: 0 3rpx;
-  border: 1px solid #043567;
-  border-radius: 10rpx;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  opacity: 0.5;
 }
-.date{
-  margin-bottom: 20rpx;
-  border-bottom: 1px solid #043567;
-}
-.search-area{
+.weatherBg{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.timeTitle{
   display: flex;
-  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
 }
-.search-area input{
-  width: 70%;
-  height: 68rpx;
-  line-height: 68rpx;
-  border: 1px solid #ccc;
-  box-shadow: inset 0 0 10px #ccc;
-  border-radius: 10rpx;
+.timeTitleIcon{
+  margin-right: 10rpx;
+  width: 36rpx;
+  height: 28rpx;
 }
-.search-area button{
-  width: 30%;
-  height: 68rpx;
-  margin-left: 5px;
+.timeTitleText{
+  font-size: 30rpx;
+  opacity: 0.5;
+}
+.scrollView{
+  padding-top: 40rpx;
+  padding-bottom: 80rpx;
+  height: 240rpx;
+}
+.list{
+  display: flex;
+  white-space: nowrap;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.listItem{
+  display: flex;
+  flex-direction:column;
+  /* 避免flex机制的自动压缩宽度 */
+  flex-shrink: 0;
+  width: 120rpx;
+  height: 240rpx;
+  line-height: 80rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 28rpx;
+}
+.itemImg{
+  width: 80rpx;
+  height: 80rpx;
+  margin:0rpx 20rpx;
+}
+.day-weather {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom:0;
+  left: 40rpx;
+  right: 40rpx;
+  height: 90rpx;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5)
+}
+ .temp-text {
+  flex-grow: 1;
+  padding-right: 30rpx;
+  text-align: right;
+}
+ .arrow-icon {
+  width: 13rpx;
+  height: 24rpx;
+}
+.location-wrapper{
+  margin-bottom: 140rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5);
+  border: none!important;
+}
+ .location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .location-icon{
+  margin-right: 10rpx;
+  width: 21rpx;
+  height: 30rpx;
+}
+ .location-tips{
+  margin-top:10rpx;
+  height: 42rpx;
+  text-align: center;
 }

@@ -9,6 +9,7 @@
     "pages/media/media",
     "pages/form/form",
     "pages/weather/weather",
+    "pages/weather/list/list",
     "pages/calc/calc/calc",
     "pages/calc/salaryClac/salaryClac",
     "pages/calc/houseLoan/houseLoan",
@@ -30,7 +31,7 @@
     ]
   },
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black",

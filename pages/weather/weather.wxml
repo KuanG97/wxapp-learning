@@ -1,37 +1,36 @@
-<!--index.wxml-->
-<view class="container">
-  <view class='info'>
-    <view class='city'>{{city}} ({{today}})</view>
-    <view class='temp'>{{weather.wendu}}℃</view>
-    <view class='weather'>{{weather.ganmao}}</view>
-  </view>
-
-  <view class="yesterday">
-    <view class='detail'>
-      <text class='yesterday-title'>昨天</text>{{weather.yesterday.date}}
+<view class='contain'>
+  <button class="location-wrapper" open-type="{{ locationAuthType==1 ? 'openSetting' : ''}}" bindopensetting="onTapLocation" bindtap="onTapLocation" plain="true">
+    <view class="location">
+      <image class="location-icon" src="/img/icon/location-icon.png"></image>
+      <view class="location-text">{{city}}</view>
     </view>
-    <view class='detail'>
-      {{weather.yesterday.type}}
-      {{weather.yesterday.fx}}
-      {{weather.yesterday.fl}}
-      {{weather.yesterday.low}}
-      {{weather.yesterday.high}}
-    </view>
-  </view>
-
-  <view class='forecast'>
-    <view class='next-day' wx:key="{{index}}" wx:for="{{weather.forecast}}">
-      <view class='detail date'>{{item.date}}</view>
-      <view class='detail'>{{item.type}}</view>
-      <view class='detail'>{{item.high}}</view>
-      <view class='detail'>{{item.low}}</view>
-      <view class='detail'>{{item.fengxiang}}</view>
-      <view class='detail'>{{item.fengli}}</view>
-    </view>
-  </view>
-
-  <view class='search-area'>
-    <input bindinput='inputing' placeholder='请输入城市名称' value='{{inputCity}}'></input>
-    <button type='primary' size='mini' bindtap='bingSearch'>查询</button>
+    <!-- 0: 未弹窗， 1: 已拒绝， 2: 已同意 -->
+    <view wx:if="{{locationAuthType==0}}"class="location-tips">点击获取当前位置</view>
+    <view wx:if="{{locationAuthType==1}}"class="location-tips">点击开启位置权限</view>
+    <view wx:if="{{locationAuthType==2}}"class="location-tips"></view>
+  </button>
+  <view class="title">{{nowTemp}}</view>
+  <view class="weather">{{nowWeather}}</view>
+  <image class='weatherBg' src='{{bgUrl}}'></image>
+  <view class="day-weather" bindtap = "onTapDayWeather">
+    <view class="day-text">{{todayDate}}</view>
+    <view class="temp-text">{{todayTemp}}</view>
+  <image class="arrow-icon" src="/img/icon/arrow.png"></image>
   </view>
 </view>
+
+<view class="timeTitle">
+  <image class="timeTitleIcon" src="/img/icon/time-icon.png"></image>
+  <view class="timeTitleText">未来24小时天气预测</view>
+</view>
+
+<scroll-view class='scrollView'  scroll-x style="width: 100%">
+  <view class='list'>
+    <view class='listItem' wx:key="index" wx:for="{{forecast}}">
+      <view class= 'item'>{{item.time}}</view>
+      <image class= 'itemImg' src='{{item.img}}'></image>
+      <view class= 'item'>{{item.temp}}</view>
+    </view>
+  </view>
+</scroll-view>
+
