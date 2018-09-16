@@ -22,5 +22,3 @@ wx-app for practice by kxx
 [安利一波前端开发推荐使用的工具 Click Here>>](https://blog.csdn.net/m0_37136491/article/details/81224160)
 
 [ESLint问题记录 Click Here>>](https://blog.csdn.net/m0_37136491/article/details/81980728)
-
-[github各类实战练习源码下载 Click Here>>](https://github.com/KuanG97)
